@@ -56,6 +56,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
+    "axios": "^0.26.1",
     "koa": "2.13.4",
     "koa-body": "^4.2.0",
     "koa-helmet": "^6.1.0",

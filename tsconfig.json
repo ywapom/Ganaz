@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "target": "es2020",
     "baseUrl": "./",
     "noEmit": true,
