@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "target": "es2020",
+    "baseUrl": "./",
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": false,
+    "paths": {
+      "src/*": ["src/*"],
+      "middleware/*": ["src/middleware/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types/global/"],
+    "skipLibCheck": true
+  },
+  "include": ["src", "tests", "tools"],
+  "exclude": ["node_modules", "build"]
+}
