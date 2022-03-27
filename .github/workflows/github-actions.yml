@@ -8,7 +8,6 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  on: workflow_dispatch
 
 jobs:
   build:
@@ -19,18 +18,21 @@ jobs:
       matrix:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        #
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 9999:9999   
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        #cache: 'npm'
-    # - run: npm ci
-    # - run: npm run build --if-present
-    # - run: npm test
-      - run: yarn install
-      - run: yarn build
-      - run: yarn start
-      - run: yarn test
+    - run: yarn install
+    - run: yarn build
+    - run: yarn test
